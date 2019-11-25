@@ -80,7 +80,7 @@ public:
 	//Setters
 	void SetStickDeadZone(float deadZone);
 	void SetTriggerDeadZone(float deadZone);
-	void SetRumble(int controllerIndex, float intensity);
+	void SetRumble(int controllerIndex, unsigned short intensity);
 	void SetIsRumbling(bool rumbleState); 
 	
 	//Getters

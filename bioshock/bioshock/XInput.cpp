@@ -116,12 +116,12 @@ void XInputController::SetTriggerDeadZone(float deadZone)
 	m_deadZoneTrigger = deadZone;
 }
 
-void XInputController::SetRumble(int controllerIndex, float intensity)
+void XInputController::SetRumble(int controllerIndex, unsigned short intensity)
 {
 	XINPUT_VIBRATION vibration;
 	ZeroMemory(&vibration, sizeof(XINPUT_VIBRATION));
 	vibration.wLeftMotorSpeed = intensity; // use any value between 0-65535 here
-	vibration.wRightMotorSpeed = intensity/2; // use any value between 0-65535 here
+	vibration.wRightMotorSpeed = intensity; // use any value between 0-65535 here
 	XInputSetState(controllerIndex, &vibration);
 	if (intensity != 0) isRumbling = true; 
 }
